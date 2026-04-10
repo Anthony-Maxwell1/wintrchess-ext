@@ -9,7 +9,7 @@ function App() {
     <>
       <FeatureToggle
         storageKey="gameReviewRedirect"
-        label="Redirect chess.com Game review to wintrchess.com"
+        label="Redirect chess.com or lichess.org Game review to wintrchess.com"
       />
       <FeatureToggle
         storageKey="verboseLogging"

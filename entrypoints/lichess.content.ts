@@ -96,8 +96,8 @@ export default defineContentScript({
           const target = e.target as HTMLElement;
 
           const button = document.querySelector(
-  "#main-wrap > main > div.round__app.variant-standard > div.rcontrols > div > a"
-);
+            "#main-wrap > main > div.round__app.variant-standard > div.rcontrols > div > a"
+          );
 
 
           if (!button) return;
@@ -109,11 +109,6 @@ export default defineContentScript({
           e.preventDefault();
           e.stopPropagation();
           e.stopImmediatePropagation();
-
-          const username =
-            document
-              .querySelector("h2.sidebar-link-text")
-              ?.textContent?.trim() || "";
 
           const gid = window.location.pathname.split("/").pop();
 
