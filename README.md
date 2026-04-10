@@ -19,6 +19,7 @@ Requirements:
 
 <details>
 <summary>Chrome (And chromium flavours)</summary>
+
 1. Run `npm run build` (`pnpm run build` for pnpm)
 
 2. Go to `chrome://extensions`
@@ -29,10 +30,13 @@ Requirements:
 
 > [!INFO]
 > To show hidden folders on windows. go to "Options" > "View" > "Show hidden files, folders, and drives" and turn it on. For macos, `Command + Shift + Dot`
+
 5. Go to `.output` and select `chrome-mv3`.
 
-Done!
+6. Done!
+
 </details>
+
 ## Popup
 
 You need to enable the feature in the popup for redirects to work, and verbose logging is available in the popup.
