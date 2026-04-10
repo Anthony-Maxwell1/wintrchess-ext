@@ -1,4 +1,0 @@
-Note:
-- right clicking and copying or opening in new tab url brings up wintrchess, clicking does not.
-- no listeners seem to be intercepting it
-- should look into it
