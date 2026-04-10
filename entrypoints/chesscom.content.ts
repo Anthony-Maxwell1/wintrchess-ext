@@ -17,8 +17,8 @@ export default defineContentScript({
     console.log("[WintrChess Ext] Content script loaded");
 
     browser.storage.local.get(
-      ["gameReviewRedirect", "verboseLogging"],
-      ({ gameReviewRedirect, verboseLogging }) => {
+      ["gameReviewRedirect", "verboseLogging", "alertShown"],
+      ({ gameReviewRedirect, verboseLogging, alertShown }) => {
         if (!verboseLogging) {
           console.log = function (...args) {
             browser.runtime.sendMessage({
@@ -38,6 +38,12 @@ export default defineContentScript({
               args: args.map(safeSerialize),
             });
           };
+        }
+        if (!alertShown) {
+          alert(
+            "WintrChess Extension (First Install)\n\nDisclaimer: This extension is not affiliated with chess.com or wintrchess.com. This extension, wintrchess.com or me (Anthony-Maxwell1) is not liable for any action taken against your chess.com account, however undetectable or unlikely it is.",
+          );
+          browser.storage.local.set({ alertShown: true });
         }
         if (!gameReviewRedirect) {
           console.log("[WintrChess Ext] gameReviewRedirect disabled, exiting.");
