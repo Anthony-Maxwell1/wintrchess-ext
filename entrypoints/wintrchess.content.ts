@@ -54,13 +54,15 @@ export default defineContentScript({
           const params = new URLSearchParams(window.location.search);
           const wcxusr = params.get("WCXUSR");
           const wcxgid = params.get("WCXGID");
+          const type = params.get("WCXTYPE");
 
           console.log("[WintrChess Ext] URL params:", {
             WCXUSR: wcxusr,
             WCXGID: wcxgid,
+            WCXTYPE: type,
           });
 
-          if (!wcxusr || !wcxgid) {
+          if (!type || (type == "chesscom" && !wcxusr) || !wcxgid) {
             console.warn("[WintrChess Ext] Missing params, aborting.");
             return;
           }
@@ -69,7 +71,10 @@ export default defineContentScript({
             type: "GET_PGN",
             username: wcxusr,
             gameId: wcxgid,
+            gameType: type,
           });
+
+          console.log(pgn)
 
           if (!pgn) {
             console.warn("[WintrChess Ext] No PGN received from background.");

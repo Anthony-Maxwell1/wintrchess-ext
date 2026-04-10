@@ -12,7 +12,7 @@ function safeSerialize(arg: any) {
 }
 
 export default defineContentScript({
-  matches: ["*://*.chess.com/*"],
+  matches: ["*://*.lichess.org/*"],
   main() {
     console.log("[WintrChess Ext] Content script loaded");
 
@@ -41,7 +41,7 @@ export default defineContentScript({
         }
         if (!alertShown) {
           alert(
-            "WintrChess Extension (First Install)\n\nDisclaimer: This extension is not affiliated with chess.com or wintrchess.com. This extension, wintrchess.com or me (Anthony-Maxwell1) is not liable for any action taken against your chess.com account, however undetectable or unlikely it is.",
+            "WintrChess Extension (First Install)\n\nDisclaimer: This extension is not affiliated with lichess.org or wintrchess.com. This extension, wintrchess.com or me (Anthony-Maxwell1) is not liable for any action taken against your lichess.org account, however undetectable or unlikely it is.",
           );
           browser.storage.local.set({ alertShown: true });
         }
@@ -51,21 +51,8 @@ export default defineContentScript({
         }
 
         const updateGameReviewLinks = () => {
-          const username =
-            document
-              .querySelector("h2.sidebar-link-text")
-              ?.textContent?.trim() || "";
-
-          if (!username) {
-            console.warn(
-              "[WintrChess Ext] Could not find username on the page.",
-            );
-          } else {
-            console.log(`[WintrChess Ext] Found username: ${username}`);
-          }
-
-          const buttons = document.querySelectorAll<HTMLElement>(
-            '[data-cy="game-over-modal-game-review-button"], [data-cy="sidebar-game-review-button"]',
+          const buttons = document.querySelectorAll(
+            "#main-wrap > main > div.round__app.variant-standard > div.rcontrols > div > a"
           );
 
           if (buttons.length === 0) {
@@ -76,7 +63,7 @@ export default defineContentScript({
             );
             buttons.forEach((btn) => {
               const gid = window.location.pathname.split("/").pop();
-              const newHref = `https://www.wintrchess.com/analysis?WCXUSR=${encodeURIComponent(username)}&WCXGID=${gid}&WCXTYPE=chesscom`;
+              const newHref = `https://www.wintrchess.com/analysis?WCXGID=${gid}&WCXTYPE=lichess`;
               btn.setAttribute("href", newHref);
               console.log(`[WintrChess Ext] Updated button: ${newHref}`);
             });
@@ -108,9 +95,10 @@ export default defineContentScript({
         const handleClick = (e: MouseEvent) => {
           const target = e.target as HTMLElement;
 
-          const button = target.closest<HTMLElement>(
-            '[data-cy="game-over-modal-game-review-button"], [data-cy="sidebar-game-review-button"]',
-          );
+          const button = document.querySelector(
+  "#main-wrap > main > div.round__app.variant-standard > div.rcontrols > div > a"
+);
+
 
           if (!button) return;
 
@@ -129,7 +117,7 @@ export default defineContentScript({
 
           const gid = window.location.pathname.split("/").pop();
 
-          const url = `https://www.wintrchess.com/analysis?WCXUSR=${encodeURIComponent(username)}&WCXGID=${gid}&WCXTYPE=chesscom`;
+          const url = `https://www.wintrchess.com/analysis?WCXGID=${gid}&WCXTYPE=lichess`;
 
           console.log("[WintrChess Ext] Redirecting to:", url);
 
