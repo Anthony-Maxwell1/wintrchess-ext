@@ -1,6 +1,6 @@
 # wintrchess-ext
 
-Redirect chess.com or lichess.org game reviews (currently only from game finish page) to wintrchess.com
+Redirect [chess.com](chess.com) or [lichess.org](lichess.org) game reviews (currently only from game finish page) to [wintrchess.com](wintrchess.org)
 
 Disclaimer: This extension is not affiliated with chess.com, lichess.org or wintrchess.com. This extension, wintrchess.com or me (Anthony-Maxwell1) is not liable for any action taken against your chess.com account, however undetectable or unlikely it is.
 
@@ -28,13 +28,22 @@ Requirements:
 
 4. Click `Load Unpacked` near the top left of the page, and locate the repository. You should have hidden folders shown.
 
-> [!Note]
 > To show hidden folders on windows. go to "Options" > "View" > "Show hidden files, folders, and drives" and turn it on. For macos, `Command + Shift + Dot`
 
 5. Go to `.output` and select `chrome-mv3`.
 
 6. Done!
 
+</details>
+
+<details>
+<summary>Firefox (And firefox flavours)</summary>
+
+1. Run `npm run build:firefox` (`pnpm run build:firefox` for pnpm)
+
+2. Zip the contents (not folder) of `.output/firefox-mv2` and rename it's extention to .xpi
+
+3. you can now either [load it temporarily](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/) or [disable signature requirement to load it fully](https://github.com/A1kmm/enable-unsigned-firefox-addons)
 </details>
 
 ## Popup
