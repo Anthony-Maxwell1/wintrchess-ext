@@ -28,7 +28,7 @@ Requirements:
 
 4. Click `Load Unpacked` near the top left of the page, and locate the repository. You should have hidden folders shown.
 
-> [!INFO]
+> [!Note]
 > To show hidden folders on windows. go to "Options" > "View" > "Show hidden files, folders, and drives" and turn it on. For macos, `Command + Shift + Dot`
 
 5. Go to `.output` and select `chrome-mv3`.
