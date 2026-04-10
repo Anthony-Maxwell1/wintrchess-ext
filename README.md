@@ -12,14 +12,21 @@ Requirements:
 - node/npm
 - pnpm recommended but not necessary, especially if you are not a frequent npm user.
 1. Clone the repository. `git clone https://github.com/Anthony-Maxwell1/wintrchess-ext.git`
+
 2. Go to the repository. `cd wintrchess-ext`
+
 3. Run `npm install` (`pnpm install` for pnpm)
+
 <details>
 <summary>Chrome (And chromium flavours)</summary>
 1. Run `npm run build` (`pnpm run build` for pnpm)
+
 2. Go to `chrome://extensions`
+
 3. Toggle on the developer mode switch on the top right.
+
 4. Click `Load Unpacked` near the top left of the page, and locate the repository. You should have hidden folders shown.
+
 > [!INFO]
 > To show hidden folders on windows. go to "Options" > "View" > "Show hidden files, folders, and drives" and turn it on. For macos, `Command + Shift + Dot`
 5. Go to `.output` and select `chrome-mv3`.
