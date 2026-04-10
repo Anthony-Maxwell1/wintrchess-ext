@@ -1,6 +1,6 @@
 # wintrchess-ext
 
-Redirect [chess.com](https://chess.com) or [lichess.org](https://lichess.org) game reviews (currently only from game finish page) to [wintrchess.com](https://wintrchess.org)
+Redirect [chess.com](https://chess.com) or [lichess.org](https://lichess.org) game reviews (currently only from game finish page) to [wintrchess.com](https://wintrchess.com)
 
 Disclaimer: This extension is not affiliated with chess.com, lichess.org or wintrchess.com. This extension, wintrchess.com or me (Anthony-Maxwell1) is not liable for any action taken against your chess.com account, however undetectable or unlikely it is.
 
