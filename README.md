@@ -4,7 +4,9 @@ Redirect [chess.com](https://chess.com) or [lichess.org](https://lichess.org) ga
 
 Disclaimer: This extension is not affiliated with chess.com, lichess.org or wintrchess.com. This extension, wintrchess.com or me (Anthony-Maxwell1) is not liable for any action taken against your chess.com account, however undetectable or unlikely it is.
 
-Currently this is not available on any online extension store.
+Available on firefox here: [Mozilla Addon Store](https://addons.mozilla.org/addon/wintrchess-ext/) or in Releases in signed or unsigned form.
+Available for chrome in releases, unsigned form.
+The extension is not available on chrome web store, nor will it likely be in the near future as I don't want to pay another fricking 5 dollars to access another one of google's development platforms.
 
 ## Build it
 
